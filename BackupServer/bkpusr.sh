@@ -13,3 +13,6 @@ EOF
 
 chown bkpusr:bkpusr /var/spool/cron/bkpusr
 chmod 600 /var/spool/cron/bkpusr
+
+## Setup cronjob
+RUN yum -y install vixie-cron mailx ksh postfix
