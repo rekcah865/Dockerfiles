@@ -6,6 +6,4 @@ ENV https_proxy http://10.40.3.249:3128
 RUN easy_install supervisor
 ADD ./supervisor.conf /etc/supervisor.conf
 
-## Setup cronjob
-RUN yum -y install vixie-cron mailx ksh postfix
 
