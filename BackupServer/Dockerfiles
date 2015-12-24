@@ -5,6 +5,10 @@ MAINTAINER Wei.Shen
 ## Base image for setup
 ADD ./base_setup.sh /tmp/base_setup.sh
 RUN chmod 755 /tmp/base_setup.sh && /tmp/base_setup.sh
+
+## SSH 
+ADD ./ssh_config.sh /tmp/ssh_config.sh
+RUN chmod 755 /tmp/ssh_config.sh && /tmp/ssh_config.sh
   
 ## Install sshpt.py 
 RUN yum -y install python-pip python-dev gcc
