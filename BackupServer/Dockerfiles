@@ -25,6 +25,7 @@ rpm -ivh http://10.40.226.46:5665/postgresql92-libs-9.2.14-1PGDG.rhel6.x86_64.rp
 RUN yum install -y mysql-libs mysql
 
 ## Create bkpusr
-
+ADD ./bkpusr.sh /tmp/bkpusr.sh
+RUN chmod 755 /tmp/bkpusr.sh && /tmp/bkpusr.sh
   
 ENTRYPOINT ["/usr/bin/supervisord","-c","/etc/supervisor.conf"]
