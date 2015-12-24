@@ -1,19 +1,30 @@
-  
-  
+## It's for Backup server on CentOS 6
+FROM centos:6.7
+MAINTAINER Wei.Shen
+
+## Base image for setup
+ADD ./base_setup.sh /tmp/base_setup.sh
+RUN chmod 755 /tmp/base_setup.sh && /tmp/base_setup.sh
   
 ## Install sshpt.py 
 RUN yum -y install python-pip python-dev gcc
 ENV http_proxy http://10.40.3.249:3128
 ENV https_proxy http://10.40.3.249:3128
-
 RUN pip install pycrypto
 RUN pip install paramiko
 RUN pip install 10.40.226.46:5665/sshpt-1.2.0.tar.gz 
 
 ## Install PG Client (9.3, 9.2)
+rpm -ivh http://10.40.226.46:5665/postgresql93-9.3.10-1PGDG.rhel6.x86_64.rpm
+rpm -ivh http://10.40.226.46:5665/postgresql93-libs-9.3.10-1PGDG.rhel6.x86_64.rpm
 
+rpm -ivh http://10.40.226.46:5665/postgresql92-9.2.14-1PGDG.rhel6.x86_64.rpm
+rpm -ivh http://10.40.226.46:5665/postgresql92-libs-9.2.14-1PGDG.rhel6.x86_64.rpm
 
 ## Install MySQL Client
+RUN yum install -y mysql-libs mysql
 
+## Create bkpusr
 
   
+ENTRYPOINT ["/usr/bin/supervisord","-c","/etc/supervisor.conf"]
