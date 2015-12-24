@@ -31,5 +31,10 @@ RUN yum install -y mysql-libs mysql
 ## Create bkpusr
 ADD ./bkpusr.sh /tmp/bkpusr.sh
 RUN chmod 755 /tmp/bkpusr.sh && /tmp/bkpusr.sh
+
+# Supervisor setup
+RUN yum -y install python-setuptools
+RUN easy_install supervisor
+ADD ./supervisor.conf /etc/supervisor.conf
   
 ENTRYPOINT ["/usr/bin/supervisord","-c","/etc/supervisor.conf"]
