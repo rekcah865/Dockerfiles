@@ -16,3 +16,6 @@ chmod 600 /var/spool/cron/bkpusr
 
 ## Setup cronjob
 RUN yum -y install vixie-cron mailx ksh postfix
+
+## Mount GlusterFS storage
+RUN mkdir -p /bkp_glfs && mount suzglfs:/szbkp-vol /bkp_glfs
