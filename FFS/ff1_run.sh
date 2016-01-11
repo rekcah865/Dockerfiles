@@ -1,5 +1,6 @@
 ## prepare FFS software 
-## ./FISFactoryServices
+## ./FISFactoryServices/
+## ./scripts/
 
 ## create volume directory for log and app
 ## mkdir -p /vol/app /vol/log
