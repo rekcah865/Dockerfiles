@@ -2,7 +2,7 @@
 
 ## Build image
 
-docker build --rm -t dfs_v1:centos6 ./dfs.dockerfile
+docker build --rm -t dfs_v1:centos6 -f dfs.dockerfile -m 4G .
 
 ## Prepare DFS application
 mkdir -p /vol/app/dfsa
