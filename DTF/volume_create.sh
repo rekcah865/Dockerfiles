@@ -93,7 +93,7 @@ mkfs -t ext4 /dev/sdb1
 
 
 ################### Mount file system 
-echo "/dev/sdd1               /vol                  ext4    defaults        1 2" >> /etc/fstab
+echo "/dev/sdb1               /vol                  ext4    defaults        1 2" >> /etc/fstab
 mkdir -p /vol
 mount /vol
 df -k /vol
