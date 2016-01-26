@@ -15,7 +15,8 @@ RUN yum -y install java-1.7.0 telnet
 RUN groupadd -g 600 suz
 RUN useradd -g 600 -u 6000 suz 
 ADD ./gps_scripts /home/suz/scripts/
-RUN mkdir -p /s01/FISGetPutServer /s01/log
+ADD ./FISGetPutServer /s01/FISGetPutServer
+RUN mkdir -p /s01/log
 RUN chown -R suz:suz /home/suz/scripts /s01/FISGetPutServer
 
 ## GetputService configuration
