@@ -2,8 +2,9 @@
 
 ## version 7.31
 VER=731 
+EXEDIR=/s01/FISGetPutServer/$VER
+SRVFILE=${EXEDIR}/GetPutServer.srv
 
-SRVFILE=/s01/FISGetPutServer/$VER/GetPutServer.srv
 if [ -f $SRVFILE ] ; then
         [ ! -z "$NAME" ] && sed -ri 's/NAME=/NAME='"$NAME"'/g' $SRVFILE
         [ ! -z "$PRIMARYAGENT" ] && sed -ri 's/PRIMARYAGENT=/PRIMARYAGENT='"$PRIMARYAGENT"'/g' $SRVFILE
