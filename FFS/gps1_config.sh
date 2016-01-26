@@ -14,6 +14,7 @@ if [ -f $SRVFILE ] ; then
         [ ! -z "$TERTIARYAGENTPORT" ] && sed -ri 's/TERTIARYAGENTPORT=/TERTIARYAGENTPORT='"$TERTIARYAGENTPORT"'/g' $SRVFILE
         [ ! -z "$LISTENPORT" ] && sed -ri 's/LISTENPORT=2915/LISTENPORT='"$LISTENPORT"'/g' $SRVFILE
         [ ! -z "$CLIENTPORT" ] && sed -ri 's/CLIENTPORT=2916/CLIENTPORT='"$CLIENTPORT"'/g' $SRVFILE
+        echo "$SRVFILE updated"
 else
 	echo "$SRVFILE not found"
 fi
