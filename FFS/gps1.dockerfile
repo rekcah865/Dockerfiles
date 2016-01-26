@@ -17,7 +17,7 @@ RUN useradd -g 600 -u 6000 suz
 ADD ./gps_scripts /home/suz/scripts/
 ADD ./FISGetPutServer /s01/FISGetPutServer
 RUN mkdir -p /s01/log
-RUN chown -R suz:suz /home/suz/scripts /s01/FISGetPutServer
+RUN chown -R suz:suz /home/suz/scripts /s01/FISGetPutServer /s01/log
 
 ## GetputService configuration
 ADD ./gps1_config.sh /gps1_config.sh
