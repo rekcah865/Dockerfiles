@@ -1,3 +1,7 @@
+### GPS1 is just for one running testing for GetPut service
+## Because the configuration file is in container, 
+##- it would disappear after container stop or restart
+
 ## prepare GPS software and configure script
 ## ./FISGetPutServer/
 ## ./gps_scripts/
